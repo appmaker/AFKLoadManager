@@ -8,6 +8,7 @@
 
 #import "AFKDownloadManager.h"
 #import "AFKDownloadWorker.h"
+#import "AFKDownloadFileWorker.h"
 
 @implementation AFKDownloadManager
 
@@ -81,6 +82,9 @@
 }
 
 
+#pragma mark Memory based operations
+
+
 + (void) queueDownloadFromURL:(NSURL *) url withHTTPParameters:(NSDictionary *) parameters target:(id) target selector:(SEL) selector atTopOfQueue:(BOOL) atTopOfQueue {
 	AFKDownloadManager *manager = [AFKDownloadManager defaultManager];
 
@@ -102,6 +106,45 @@
 	AFKDownloadManager *manager = [AFKDownloadManager defaultManager];
 	
 	AFKDownloadWorker *worker = [[AFKDownloadWorker new] autorelease];
+	
+	worker.url = url;
+	worker.method = method;
+	worker.queryParameters = queryParameters;
+	worker.HTTPParameters = HTTPParameters;
+	
+	worker.downloadManager = manager;
+	
+	worker.target = target;
+	worker.selector = selector;
+	
+	[manager enqueueWorker:worker atTopOfQueue:atTopOfQueue];
+}
+
+
+#pragma mark File-based operations
+
+
++ (void) queueFileDownloadFromURL:(NSURL *) url withHTTPParameters:(NSDictionary *) parameters target:(id) target selector:(SEL) selector atTopOfQueue:(BOOL) atTopOfQueue {
+	AFKDownloadManager *manager = [AFKDownloadManager defaultManager];
+	
+	AFKDownloadFileWorker *worker = [[AFKDownloadFileWorker new] autorelease];
+	
+	worker.url = url;
+	worker.HTTPParameters = parameters;
+	
+	worker.downloadManager = manager;
+	
+	worker.target = target;
+	worker.selector = selector;
+	
+	[manager enqueueWorker:worker atTopOfQueue:atTopOfQueue];
+}
+
+
++ (void) queueFileDownloadFromURL:(NSURL *) url method:(NSString *) method queryParameters:(NSDictionary *) queryParameters HTTPParameters:(NSDictionary *) HTTPParameters target:(id) target selector:(SEL) selector atTopOfQueue:(BOOL) atTopOfQueue {
+	AFKDownloadManager *manager = [AFKDownloadManager defaultManager];
+	
+	AFKDownloadFileWorker *worker = [[AFKDownloadFileWorker new] autorelease];
 	
 	worker.url = url;
 	worker.method = method;

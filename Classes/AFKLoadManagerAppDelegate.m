@@ -7,6 +7,7 @@
 //
 
 #import "AFKLoadManagerAppDelegate.h"
+#import "AFKDownloadFileWorker.h"
 
 @implementation AFKLoadManagerAppDelegate
 
@@ -17,7 +18,7 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
+	
 	controller = [[DemoImageLoaderController alloc] init];
 	
 	[window addSubview:controller.view];

@@ -20,7 +20,7 @@
 
 
 - (void) start {
-	NSString *urlPayload;
+	NSString *urlPayload = Nil;
 
 	if (self.queryParameters && self.queryParameters.count) {
 		urlPayload = [[NSMutableString new] autorelease];
@@ -36,7 +36,7 @@
 		urlPayload = [parameters componentsJoinedByString:@"&"];
 	}
 		 
-	NSMutableURLRequest *urlRequest;
+	NSMutableURLRequest *urlRequest = Nil;
 	
 	if (urlPayload) {
 		if ([self.method isEqualToString:@"GET"]) {
@@ -67,32 +67,24 @@
 
 
 - (void) stop {
-	
 	[self.urlConnection cancel];
-	
 }
 
 
 - (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)newData {
-	
 	[self.content appendData:newData];
-	
 }
 
 
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-	
 	[downloadManager workerIsDone:self];
 	[self.target performSelector:self.selector withObject:Nil];
-	
 }
 
 
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection {
-	
 	[downloadManager workerIsDone:self];
 	[self.target performSelector:self.selector withObject:self.content];
-	
 }
 
 
@@ -110,7 +102,6 @@
 
 
 - (void) dealloc {
-	
 	self.method = Nil;
 	self.url = Nil;
 	self.queryParameters = Nil;
@@ -122,7 +113,6 @@
 	self.content = Nil;
 	
 	[super dealloc];
-	
 }
 
 

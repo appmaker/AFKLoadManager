@@ -16,6 +16,7 @@
 		8F862F171255680C005D8CB9 /* AFKDownloadWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F862F131255680C005D8CB9 /* AFKDownloadWorker.m */; };
 		8F862F181255680C005D8CB9 /* AFKDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */; };
 		8F862F1C1255688D005D8CB9 /* DemoImageLoaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */; };
+		8FA0291412AA9F4E004122B4 /* AFKDownloadFileWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA0291312AA9F4E004122B4 /* AFKDownloadFileWorker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		8F862F161255680C005D8CB9 /* AFKDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFKDownloadManager.h; sourceTree = "<group>"; };
 		8F862F1A1255688D005D8CB9 /* DemoImageLoaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoImageLoaderController.h; sourceTree = "<group>"; };
 		8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoImageLoaderController.m; sourceTree = "<group>"; };
+		8FA0291212AA9F4E004122B4 /* AFKDownloadFileWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFKDownloadFileWorker.h; sourceTree = "<group>"; };
+		8FA0291312AA9F4E004122B4 /* AFKDownloadFileWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFKDownloadFileWorker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +124,9 @@
 		8F862F12125567D3005D8CB9 /* Load Manager */ = {
 			isa = PBXGroup;
 			children = (
-				8F862F131255680C005D8CB9 /* AFKDownloadWorker.m */,
-				8F862F141255680C005D8CB9 /* AFKDownloadWorker.h */,
-				8F862F151255680C005D8CB9 /* AFKDownloadManager.m */,
-				8F862F161255680C005D8CB9 /* AFKDownloadManager.h */,
+				8FA0294F12AAD4E4004122B4 /* Worker (File) */,
+				8FA0294E12AAD4DE004122B4 /* Worker (Memory) */,
+				8FA0294D12AAD4D9004122B4 /* Manager */,
 			);
 			name = "Load Manager";
 			sourceTree = "<group>";
@@ -136,6 +138,33 @@
 				8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */,
 			);
 			name = "Image Loader (Demo)";
+			sourceTree = "<group>";
+		};
+		8FA0294D12AAD4D9004122B4 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8F862F151255680C005D8CB9 /* AFKDownloadManager.m */,
+				8F862F161255680C005D8CB9 /* AFKDownloadManager.h */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		8FA0294E12AAD4DE004122B4 /* Worker (Memory) */ = {
+			isa = PBXGroup;
+			children = (
+				8F862F131255680C005D8CB9 /* AFKDownloadWorker.m */,
+				8F862F141255680C005D8CB9 /* AFKDownloadWorker.h */,
+			);
+			name = "Worker (Memory)";
+			sourceTree = "<group>";
+		};
+		8FA0294F12AAD4E4004122B4 /* Worker (File) */ = {
+			isa = PBXGroup;
+			children = (
+				8FA0291212AA9F4E004122B4 /* AFKDownloadFileWorker.h */,
+				8FA0291312AA9F4E004122B4 /* AFKDownloadFileWorker.m */,
+			);
+			name = "Worker (File)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +232,7 @@
 				8F862F171255680C005D8CB9 /* AFKDownloadWorker.m in Sources */,
 				8F862F181255680C005D8CB9 /* AFKDownloadManager.m in Sources */,
 				8F862F1C1255688D005D8CB9 /* DemoImageLoaderController.m in Sources */,
+				8FA0291412AA9F4E004122B4 /* AFKDownloadFileWorker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

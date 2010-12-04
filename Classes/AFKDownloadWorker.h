@@ -28,8 +28,6 @@
 	NSURLConnection *urlConnection;
 	NSMutableData *content;
 	
-	NSAutoreleasePool *pool;
-	
 }
 
 

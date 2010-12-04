@@ -40,6 +40,22 @@ static const NSString *kImages[] = {@"http://farm5.static.flickr.com/4143/494252
 }
 
 
+- (void) imageLoadedFromFile:(NSString *) temporaryFileName {
+	NSError *error = Nil;
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	
+	[fileManager removeItemAtPath:[self cachedPathForImage:imagesLoaded] error:Nil];
+	[fileManager copyItemAtPath:temporaryFileName toPath:[self cachedPathForImage:imagesLoaded] error:&error];
+	
+	if (error) {
+		NSLog(@"Error while copying image: %@", error);
+	} else {
+		imagesLoaded++;
+	}
+}
+
+
+
 - (void) switchImage {
 	if (!imagesLoaded) {
 		[self performSelector:@selector(switchImage) withObject:Nil afterDelay:0.5];
@@ -104,11 +120,26 @@ static const NSString *kImages[] = {@"http://farm5.static.flickr.com/4143/494252
 		imagesLoaded = 0;
 		
 		for (int i = 0; i < kImageCount; i++) {
+
+			// Use the following for in-memory loading
+
+			/*
+			 
 			[AFKDownloadManager queueDownloadFromURL:[NSURL URLWithString:(NSString *) kImages[i]] 
 													   withHTTPParameters:Nil 
 																   target:self 
 																 selector:@selector(imageLoaded:) 
 															 atTopOfQueue:NO];
+			
+			 */
+			
+			// Use the following for disk loading
+			
+			[AFKDownloadManager queueFileDownloadFromURL:[NSURL URLWithString:(NSString *) kImages[i]]
+									  withHTTPParameters:Nil
+												  target:self
+												selector:@selector(imageLoadedFromFile:)
+											atTopOfQueue:NO];
 		}
 		
 		[self switchImage];
