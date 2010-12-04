@@ -96,7 +96,7 @@
 	worker.downloadManager = manager;
 	
 	worker.completionTask = ^ (NSData *data) {
-		[worker performSelector:selector withObject:data];
+		[target performSelector:selector withObject:data];
 	};
 	
 	[manager enqueueWorker:worker atTopOfQueue:atTopOfQueue];
@@ -116,7 +116,7 @@
 	worker.downloadManager = manager;
 	
 	worker.completionTask = ^ (NSData *data) {
-		[worker performSelector:selector withObject:data];
+		[target performSelector:selector withObject:data];
 	};
 	
 	[manager enqueueWorker:worker atTopOfQueue:atTopOfQueue];
