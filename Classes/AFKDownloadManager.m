@@ -7,8 +7,6 @@
 //
 
 #import "AFKDownloadManager.h"
-#import "AFKDownloadWorker.h"
-#import "AFKDownloadFileWorker.h"
 
 @implementation AFKDownloadManager
 
@@ -85,25 +83,15 @@
 #pragma mark Memory based operations
 
 
-+ (void) queueDownloadFromURL:(NSURL *) url withHTTPParameters:(NSDictionary *) parameters target:(id) target selector:(SEL) selector atTopOfQueue:(BOOL) atTopOfQueue {
-	AFKDownloadManager *manager = [AFKDownloadManager defaultManager];
-
-	AFKDownloadWorker *worker = [[AFKDownloadWorker new] autorelease];
-	
-	worker.url = url;
-	worker.HTTPParameters = parameters;
-	
-	worker.downloadManager = manager;
-	
-	worker.completionTask = ^ (NSData *data) {
-		[target performSelector:selector withObject:data];
-	};
-	
-	[manager enqueueWorker:worker atTopOfQueue:atTopOfQueue];
-}
+// Main method
 
 
-+ (void) queueDownloadFromURL:(NSURL *) url method:(NSString *) method queryParameters:(NSDictionary *) queryParameters HTTPParameters:(NSDictionary *) HTTPParameters target:(id) target selector:(SEL) selector atTopOfQueue:(BOOL) atTopOfQueue {
++ (void) queueDownloadFromURL:(NSURL *) url 
+					   method:(NSString *) method 
+			  queryParameters:(NSDictionary *) queryParameters 
+			   HTTPParameters:(NSDictionary *) HTTPParameters 
+				 atTopOfQueue:(BOOL) atTopOfQueue
+			  completionBlock:(AFKDownloadWorkerTask) completionBlock {
 	AFKDownloadManager *manager = [AFKDownloadManager defaultManager];
 	
 	AFKDownloadWorker *worker = [[AFKDownloadWorker new] autorelease];
@@ -114,37 +102,72 @@
 	worker.HTTPParameters = HTTPParameters;
 	
 	worker.downloadManager = manager;
-	
-	worker.completionTask = ^ (NSData *data) {
-		[target performSelector:selector withObject:data];
-	};
+	worker.completionTask = completionBlock;
 	
 	[manager enqueueWorker:worker atTopOfQueue:atTopOfQueue];
+}
+
+
+// Main method with target/selector
+
+
++ (void) queueDownloadFromURL:(NSURL *) url 
+					   method:(NSString *) method 
+			  queryParameters:(NSDictionary *) queryParameters 
+			   HTTPParameters:(NSDictionary *) HTTPParameters 
+				 atTopOfQueue:(BOOL) atTopOfQueue
+					   target:(id) target 
+					 selector:(SEL) selector {
+	[AFKDownloadManager queueDownloadFromURL: url 
+									  method: method 
+							 queryParameters: queryParameters 
+							  HTTPParameters: HTTPParameters 
+								atTopOfQueue: atTopOfQueue
+							 completionBlock: ^ (NSData *data) {
+								 [target performSelector:selector withObject:data];
+							 }];
+}
+
+
+// Convenience method (no method and HTTP parameters)
+
+
++ (void) queueDownloadFromURL:(NSURL *) url
+			  queryParameters:(NSDictionary *) queryParameters
+				 atTopOfQueue:(BOOL) atTopOfQueue
+			  completionBlock:(AFKDownloadWorkerTask) completionBlock {
+	[AFKDownloadManager queueDownloadFromURL:url method:@"GET" queryParameters:queryParameters HTTPParameters:Nil atTopOfQueue:atTopOfQueue completionBlock:completionBlock];
+}
+
+
+// Convenience method (no method and HTTP parameters) with target/selector
+
+
++ (void) queueDownloadFromURL:(NSURL *) url
+			  queryParameters:(NSDictionary *) queryParameters
+				 atTopOfQueue:(BOOL) atTopOfQueue
+					   target:(id) target
+					 selector:(SEL) selector	{
+	[AFKDownloadManager queueDownloadFromURL: url 
+									  method: @"GET" 
+							 queryParameters: queryParameters 
+							  HTTPParameters: Nil 
+								atTopOfQueue: atTopOfQueue 
+							 completionBlock: ^ (NSData *data) {
+								 [target performSelector:selector withObject:data];
+							 }];
 }
 
 
 #pragma mark File-based operations
 
 
-+ (void) queueFileDownloadFromURL:(NSURL *) url withHTTPParameters:(NSDictionary *) parameters target:(id) target selector:(SEL) selector atTopOfQueue:(BOOL) atTopOfQueue {
-	AFKDownloadManager *manager = [AFKDownloadManager defaultManager];
-	
-	AFKDownloadFileWorker *worker = [[AFKDownloadFileWorker new] autorelease];
-	
-	worker.url = url;
-	worker.HTTPParameters = parameters;
-	
-	worker.downloadManager = manager;
-	
-	worker.fileCompletionTask = ^ (NSString *temporaryFileName) {
-		[target performSelector:selector withObject:temporaryFileName];
-	};
-	
-	[manager enqueueWorker:worker atTopOfQueue:atTopOfQueue];
-}
-
-
-+ (void) queueFileDownloadFromURL:(NSURL *) url method:(NSString *) method queryParameters:(NSDictionary *) queryParameters HTTPParameters:(NSDictionary *) HTTPParameters target:(id) target selector:(SEL) selector atTopOfQueue:(BOOL) atTopOfQueue {
++ (void) queueFileDownloadFromURL:(NSURL *) url 
+						   method:(NSString *) method 
+				  queryParameters:(NSDictionary *) queryParameters 
+				   HTTPParameters:(NSDictionary *) HTTPParameters 
+					 atTopOfQueue:(BOOL) atTopOfQueue 
+				  completionBlock:(AFKDownloadFileWorkerTask) completionBlock {
 	AFKDownloadManager *manager = [AFKDownloadManager defaultManager];
 	
 	AFKDownloadFileWorker *worker = [[AFKDownloadFileWorker new] autorelease];
@@ -156,14 +179,58 @@
 	
 	worker.downloadManager = manager;
 	
-	worker.fileCompletionTask = ^ (NSString *temporaryFileName) {
-		[target performSelector:selector withObject:temporaryFileName];
-	};
+	worker.fileCompletionTask = completionBlock;
 	
 	[manager enqueueWorker:worker atTopOfQueue:atTopOfQueue];
 }
 
 
++ (void) queueFileDownloadFromURL:(NSURL *) url 
+						   method:(NSString *) method 
+				  queryParameters:(NSDictionary *) queryParameters 
+				   HTTPParameters:(NSDictionary *) HTTPParameters 
+					 atTopOfQueue:(BOOL) atTopOfQueue 
+						   target:(id) target
+						 selector:(SEL) selector {
+	[AFKDownloadManager queueFileDownloadFromURL:url 
+										  method:method 
+								 queryParameters:queryParameters 
+								  HTTPParameters:HTTPParameters 
+									atTopOfQueue:atTopOfQueue 
+								 completionBlock:^ (NSString *temporaryFileName) {
+									 [target performSelector:selector withObject:temporaryFileName];
+								 }];
+}
+	
+
++ (void) queueFileDownloadFromURL:(NSURL *) url 
+				  queryParameters:(NSDictionary *) queryParameters 
+					 atTopOfQueue:(BOOL) atTopOfQueue 
+				  completionBlock:(AFKDownloadFileWorkerTask) completionBlock {
+	[AFKDownloadManager queueFileDownloadFromURL:url 
+										  method:@"GET"
+								 queryParameters:queryParameters 
+								  HTTPParameters:Nil
+									atTopOfQueue:atTopOfQueue 
+								 completionBlock:completionBlock];
+}
+	
+
++ (void) queueFileDownloadFromURL:(NSURL *) url 
+				  queryParameters:(NSDictionary *) queryParameters 
+					 atTopOfQueue:(BOOL) atTopOfQueue 
+						   target:(id) target
+						 selector:(SEL) selector {
+	[AFKDownloadManager queueFileDownloadFromURL:url 
+										  method:@"GET"
+								 queryParameters:queryParameters 
+								  HTTPParameters:Nil
+									atTopOfQueue:atTopOfQueue 
+								 completionBlock:^ (NSString *temporaryFileName) {
+									 [target performSelector:selector withObject:temporaryFileName];
+								 }];
+}	
+	
 - (id) init {
 	if (self = [super init]) {
 		queue = [NSMutableArray new];

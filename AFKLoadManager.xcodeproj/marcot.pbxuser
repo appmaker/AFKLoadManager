@@ -290,6 +290,12 @@
 			8FA02A4B12AADE2C004122B4 /* PBXTextBookmark */ = 8FA02A4B12AADE2C004122B4 /* PBXTextBookmark */;
 			8FA02A4C12AADE2C004122B4 /* PBXTextBookmark */ = 8FA02A4C12AADE2C004122B4 /* PBXTextBookmark */;
 			8FA02A4D12AADE2C004122B4 /* PBXTextBookmark */ = 8FA02A4D12AADE2C004122B4 /* PBXTextBookmark */;
+			8FA02A7012AAE22F004122B4 /* PBXTextBookmark */ = 8FA02A7012AAE22F004122B4 /* PBXTextBookmark */;
+			8FA02A7112AAE22F004122B4 /* PBXTextBookmark */ = 8FA02A7112AAE22F004122B4 /* PBXTextBookmark */;
+			8FA02A7212AAE22F004122B4 /* PBXTextBookmark */ = 8FA02A7212AAE22F004122B4 /* PBXTextBookmark */;
+			8FA02A7712AAE2B4004122B4 /* PBXTextBookmark */ = 8FA02A7712AAE2B4004122B4 /* PBXTextBookmark */;
+			8FA02A7812AAE2B4004122B4 /* PBXTextBookmark */ = 8FA02A7812AAE2B4004122B4 /* PBXTextBookmark */;
+			8FA02A7912AAE2B4004122B4 /* PBXTextBookmark */ = 8FA02A7912AAE2B4004122B4 /* PBXTextBookmark */;
 			8FCDFBAD125D78C3003EB5FF = 8FCDFBAD125D78C3003EB5FF /* PBXTextBookmark */;
 			8FCDFBAE125D78C3003EB5FF = 8FCDFBAE125D78C3003EB5FF /* PBXTextBookmark */;
 			8FCDFBAF125D78C3003EB5FF = 8FCDFBAF125D78C3003EB5FF /* PBXTextBookmark */;
@@ -361,16 +367,16 @@
 	};
 	8F862F151255680C005D8CB9 /* AFKDownloadManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1996, 2800}}";
-			sepNavSelRange = "{2093, 0}";
-			sepNavVisRange = "{1598, 2294}";
+			sepNavIntBoundsRect = "{{0, 0}, {1549, 4064}}";
+			sepNavSelRange = "{5796, 206}";
+			sepNavVisRange = "{4116, 2216}";
 		};
 	};
 	8F862F161255680C005D8CB9 /* AFKDownloadManager.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1956, 1016}}";
-			sepNavSelRange = "{1014, 12}";
-			sepNavVisRange = "{0, 1064}";
+			sepNavIntBoundsRect = "{{0, 0}, {1549, 1584}}";
+			sepNavSelRange = "{2697, 0}";
+			sepNavVisRange = "{658, 2102}";
 		};
 	};
 	8F862F1A1255688D005D8CB9 /* DemoImageLoaderController.h */ = {
@@ -382,9 +388,9 @@
 	};
 	8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1859, 2688}}";
-			sepNavSelRange = "{4408, 0}";
-			sepNavVisRange = "{2451, 476}";
+			sepNavIntBoundsRect = "{{0, 0}, {1549, 2176}}";
+			sepNavSelRange = "{4233, 0}";
+			sepNavVisRange = "{1971, 2429}";
 		};
 	};
 	8F862F3912556C27005D8CB9 /* PBXTextBookmark */ = {
@@ -443,8 +449,8 @@
 		isa = PBXTextBookmark;
 		fRef = 8F862F161255680C005D8CB9 /* AFKDownloadManager.h */;
 		name = "AFKDownloadManager.h: 32";
-		rLen = 167;
-		rLoc = 592;
+		rLen = 0;
+		rLoc = 679;
 		rType = 0;
 		vrLen = 820;
 		vrLoc = 0;
@@ -468,7 +474,7 @@
 		fRef = 8F862F161255680C005D8CB9 /* AFKDownloadManager.h */;
 		name = "AFKDownloadManager.h: 31";
 		rLen = 0;
-		rLoc = 591;
+		rLoc = 656;
 		rType = 0;
 		vrLen = 1064;
 		vrLoc = 0;
@@ -568,7 +574,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 73";
 		rLen = 0;
-		rLoc = 1438;
+		rLoc = 1374;
 		rType = 0;
 		vrLen = 1544;
 		vrLoc = 1460;
@@ -658,7 +664,7 @@
 		fRef = 8F862F161255680C005D8CB9 /* AFKDownloadManager.h */;
 		name = "AFKDownloadManager.h: 35";
 		rLen = 12;
-		rLoc = 1014;
+		rLoc = 2710;
 		rType = 0;
 		vrLen = 1064;
 		vrLoc = 0;
@@ -688,7 +694,7 @@
 		fRef = 8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */;
 		name = "DemoImageLoaderController.m: 133";
 		rLen = 0;
-		rLoc = 4408;
+		rLoc = 4233;
 		rType = 0;
 		vrLen = 1060;
 		vrLoc = 3710;
@@ -698,7 +704,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 85";
 		rLen = 0;
-		rLoc = 1828;
+		rLoc = 3935;
 		rType = 0;
 		vrLen = 903;
 		vrLoc = 0;
@@ -708,7 +714,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 11";
 		rLen = 0;
-		rLoc = 243;
+		rLoc = 180;
 		rType = 0;
 		vrLen = 881;
 		vrLoc = 3;
@@ -718,7 +724,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 11";
 		rLen = 0;
-		rLoc = 243;
+		rLoc = 180;
 		rType = 0;
 		vrLen = 881;
 		vrLoc = 3;
@@ -728,7 +734,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 11";
 		rLen = 0;
-		rLoc = 243;
+		rLoc = 180;
 		rType = 0;
 		vrLen = 937;
 		vrLoc = 52;
@@ -748,7 +754,7 @@
 		fRef = 8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */;
 		name = "DemoImageLoaderController.m: 136";
 		rLen = 0;
-		rLoc = 4454;
+		rLoc = 4233;
 		rType = 0;
 		vrLen = 424;
 		vrLoc = 4112;
@@ -758,7 +764,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 140";
 		rLen = 0;
-		rLoc = 3512;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 443;
 		vrLoc = 2865;
@@ -785,7 +791,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 11";
 		rLen = 0;
-		rLoc = 243;
+		rLoc = 180;
 		rType = 0;
 		vrLen = 954;
 		vrLoc = 52;
@@ -825,7 +831,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 11";
 		rLen = 0;
-		rLoc = 243;
+		rLoc = 180;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 623;
@@ -1045,7 +1051,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 11";
 		rLen = 0;
-		rLoc = 243;
+		rLoc = 180;
 		rType = 0;
 		vrLen = 1419;
 		vrLoc = 455;
@@ -1065,7 +1071,7 @@
 		fRef = 8F862F161255680C005D8CB9 /* AFKDownloadManager.h */;
 		name = "AFKDownloadManager.h: 35";
 		rLen = 12;
-		rLoc = 1014;
+		rLoc = 2710;
 		rType = 0;
 		vrLen = 1064;
 		vrLoc = 0;
@@ -1085,7 +1091,7 @@
 		fRef = 8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */;
 		name = "DemoImageLoaderController.m: 133";
 		rLen = 0;
-		rLoc = 4408;
+		rLoc = 4233;
 		rType = 0;
 		vrLen = 1937;
 		vrLoc = 2837;
@@ -1095,7 +1101,7 @@
 		fRef = 8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */;
 		name = "DemoImageLoaderController.m: 133";
 		rLen = 0;
-		rLoc = 4408;
+		rLoc = 4233;
 		rType = 0;
 		vrLen = 1819;
 		vrLoc = 507;
@@ -1115,7 +1121,7 @@
 		fRef = 8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */;
 		name = "DemoImageLoaderController.m: 133";
 		rLen = 0;
-		rLoc = 4408;
+		rLoc = 4233;
 		rType = 0;
 		vrLen = 368;
 		vrLoc = 1958;
@@ -1125,7 +1131,7 @@
 		fRef = 8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */;
 		name = "DemoImageLoaderController.m: 48";
 		rLen = 0;
-		rLoc = 1663;
+		rLoc = 1282;
 		rType = 0;
 		vrLen = 1784;
 		vrLoc = 3120;
@@ -1135,7 +1141,7 @@
 		fRef = 8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */;
 		name = "DemoImageLoaderController.m: 48";
 		rLen = 0;
-		rLoc = 1663;
+		rLoc = 1282;
 		rType = 0;
 		vrLen = 1839;
 		vrLoc = 3065;
@@ -1145,7 +1151,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 107";
 		rLen = 0;
-		rLoc = 2519;
+		rLoc = 3935;
 		rType = 0;
 		vrLen = 2220;
 		vrLoc = 1598;
@@ -1205,7 +1211,7 @@
 		fRef = 8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */;
 		name = "DemoImageLoaderController.m: 135";
 		rLen = 0;
-		rLoc = 4408;
+		rLoc = 4233;
 		rType = 0;
 		vrLen = 476;
 		vrLoc = 2451;
@@ -1235,7 +1241,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 162";
 		rLen = 0;
-		rLoc = 4272;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 981;
 		vrLoc = 3539;
@@ -1335,7 +1341,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 162";
 		rLen = 0;
-		rLoc = 4272;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 1600;
 		vrLoc = 2920;
@@ -1345,7 +1351,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 163";
 		rLen = 0;
-		rLoc = 4274;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 1662;
 		vrLoc = 2922;
@@ -1355,7 +1361,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 163";
 		rLen = 0;
-		rLoc = 4274;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 1662;
 		vrLoc = 2922;
@@ -1365,7 +1371,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 163";
 		rLen = 0;
-		rLoc = 4274;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 1662;
 		vrLoc = 2922;
@@ -1375,7 +1381,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 163";
 		rLen = 0;
-		rLoc = 4274;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 332;
 		vrLoc = 4139;
@@ -1422,7 +1428,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 163";
 		rLen = 0;
-		rLoc = 4274;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 1664;
 		vrLoc = 2920;
@@ -1536,7 +1542,7 @@
 		isa = PBXTextBookmark;
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		rLen = 0;
-		rLoc = 139;
+		rLoc = 205;
 		rType = 1;
 	};
 	8FA02A3412AADD6D004122B4 /* PBXTextBookmark */ = {
@@ -1544,7 +1550,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 140";
 		rLen = 0;
-		rLoc = 3440;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 369;
 		vrLoc = 3204;
@@ -1564,7 +1570,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 160";
 		rLen = 0;
-		rLoc = 4211;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 1815;
 		vrLoc = 2678;
@@ -1574,7 +1580,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 160";
 		rLen = 0;
-		rLoc = 4211;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 1815;
 		vrLoc = 2678;
@@ -1584,7 +1590,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 160";
 		rLen = 0;
-		rLoc = 4211;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 369;
 		vrLoc = 3204;
@@ -1624,7 +1630,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 160";
 		rLen = 0;
-		rLoc = 4211;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 1899;
 		vrLoc = 2591;
@@ -1634,7 +1640,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 160";
 		rLen = 0;
-		rLoc = 4211;
+		rLoc = 5351;
 		rType = 0;
 		vrLen = 1899;
 		vrLoc = 2591;
@@ -1644,7 +1650,7 @@
 		fRef = 8F862F161255680C005D8CB9 /* AFKDownloadManager.h */;
 		name = "AFKDownloadManager.h: 35";
 		rLen = 12;
-		rLoc = 1014;
+		rLoc = 2710;
 		rType = 0;
 		vrLen = 1064;
 		vrLoc = 0;
@@ -1654,7 +1660,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 106";
 		rLen = 0;
-		rLoc = 2448;
+		rLoc = 3935;
 		rType = 0;
 		vrLen = 2145;
 		vrLoc = 2041;
@@ -1664,16 +1670,76 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 99";
 		rLen = 0;
-		rLoc = 2093;
+		rLoc = 3935;
 		rType = 0;
 		vrLen = 2294;
 		vrLoc = 1598;
+	};
+	8FA02A7012AAE22F004122B4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
+		name = "AFKDownloadManager.m: 219";
+		rLen = 206;
+		rLoc = 5796;
+		rType = 0;
+		vrLen = 2216;
+		vrLoc = 4116;
+	};
+	8FA02A7112AAE22F004122B4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8F862F161255680C005D8CB9 /* AFKDownloadManager.h */;
+		name = "AFKDownloadManager.h: 88";
+		rLen = 0;
+		rLoc = 2699;
+		rType = 0;
+		vrLen = 1957;
+		vrLoc = 537;
+	};
+	8FA02A7212AAE22F004122B4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8F862F161255680C005D8CB9 /* AFKDownloadManager.h */;
+		name = "AFKDownloadManager.h: 92";
+		rLen = 0;
+		rLoc = 2697;
+		rType = 0;
+		vrLen = 2102;
+		vrLoc = 658;
+	};
+	8FA02A7712AAE2B4004122B4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8F862F161255680C005D8CB9 /* AFKDownloadManager.h */;
+		name = "AFKDownloadManager.h: 92";
+		rLen = 0;
+		rLoc = 2697;
+		rType = 0;
+		vrLen = 2102;
+		vrLoc = 658;
+	};
+	8FA02A7812AAE2B4004122B4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */;
+		name = "DemoImageLoaderController.m: 48";
+		rLen = 0;
+		rLoc = 1282;
+		rType = 0;
+		vrLen = 1893;
+		vrLoc = 3011;
+	};
+	8FA02A7912AAE2B4004122B4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */;
+		name = "DemoImageLoaderController.m: 115";
+		rLen = 0;
+		rLoc = 4233;
+		rType = 0;
+		vrLen = 2429;
+		vrLoc = 1971;
 	};
 	8FCDFBAD125D78C3003EB5FF /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 8F862F1B1255688D005D8CB9 /* DemoImageLoaderController.m */;
 		name = "DemoImageLoaderController.m: 36";
-		rLen = 39;
+		rLen = 0;
 		rLoc = 1282;
 		rType = 0;
 		vrLen = 2003;
@@ -1684,7 +1750,7 @@
 		fRef = 8F862F151255680C005D8CB9 /* AFKDownloadManager.m */;
 		name = "AFKDownloadManager.m: 73";
 		rLen = 0;
-		rLoc = 1438;
+		rLoc = 1374;
 		rType = 0;
 		vrLen = 1633;
 		vrLoc = 1281;
