@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+
+typedef void (^AFKDownloadWorkerTask)(NSData *data);
+
+
+
 @class AFKDownloadManager;
 
 @interface AFKDownloadWorker : NSObject {
@@ -19,9 +24,8 @@
 	NSDictionary *HTTPParameters;
 	
 	AFKDownloadManager *downloadManager;
-	
-	id target;
-	SEL selector;
+
+	AFKDownloadWorkerTask completionTask;
 
 	BOOL running;
 	
@@ -40,8 +44,7 @@
 
 @property (nonatomic,retain) AFKDownloadManager *downloadManager;
 
-@property (nonatomic,retain) id target;
-@property (nonatomic,assign) SEL selector;
+@property (nonatomic,copy) AFKDownloadWorkerTask completionTask;
 
 @property (nonatomic,readonly) BOOL running;
 

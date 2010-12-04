@@ -12,7 +12,7 @@
 
 @implementation AFKDownloadWorker
 
-@synthesize method, url, queryParameters, HTTPParameters, downloadManager, target, selector, running, urlConnection, content;
+@synthesize method, url, queryParameters, HTTPParameters, downloadManager, completionTask, running, urlConnection, content;
 
 
 #pragma mark -
@@ -78,13 +78,13 @@
 
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
 	[downloadManager workerIsDone:self];
-	[self.target performSelector:self.selector withObject:Nil];
+	completionTask(Nil);
 }
 
 
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection {
 	[downloadManager workerIsDone:self];
-	[self.target performSelector:self.selector withObject:self.content];
+	completionTask(self.content);
 }
 
 
@@ -106,7 +106,7 @@
 	self.url = Nil;
 	self.queryParameters = Nil;
 	self.HTTPParameters = Nil;
-	self.target = Nil;
+	self.completionTask = Nil;
 	self.downloadManager = Nil;
 	
 	self.urlConnection = Nil;

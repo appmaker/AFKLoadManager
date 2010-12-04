@@ -11,7 +11,7 @@
 
 
 @implementation AFKDownloadFileWorker
-@synthesize temporaryFileName;
+@synthesize temporaryFileName, fileCompletionTask;
 
 
 #pragma mark -
@@ -23,10 +23,16 @@
 }
 
 
+- (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+	[downloadManager workerIsDone:self];
+	completionTask(Nil);
+}
+
 
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection {
 	[self.downloadManager workerIsDone:self];
-	[self.target performSelector:self.selector withObject:temporaryFileName];
+	
+	fileCompletionTask(temporaryFileName);
 }
 
 

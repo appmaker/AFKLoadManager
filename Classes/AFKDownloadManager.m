@@ -95,8 +95,9 @@
 	
 	worker.downloadManager = manager;
 	
-	worker.target = target;
-	worker.selector = selector;
+	worker.completionTask = ^ (NSData *data) {
+		[worker performSelector:selector withObject:data];
+	};
 	
 	[manager enqueueWorker:worker atTopOfQueue:atTopOfQueue];
 }
@@ -114,8 +115,9 @@
 	
 	worker.downloadManager = manager;
 	
-	worker.target = target;
-	worker.selector = selector;
+	worker.completionTask = ^ (NSData *data) {
+		[worker performSelector:selector withObject:data];
+	};
 	
 	[manager enqueueWorker:worker atTopOfQueue:atTopOfQueue];
 }
@@ -134,8 +136,9 @@
 	
 	worker.downloadManager = manager;
 	
-	worker.target = target;
-	worker.selector = selector;
+	worker.fileCompletionTask = ^ (NSString *temporaryFileName) {
+		[target performSelector:selector withObject:temporaryFileName];
+	};
 	
 	[manager enqueueWorker:worker atTopOfQueue:atTopOfQueue];
 }
@@ -153,8 +156,9 @@
 	
 	worker.downloadManager = manager;
 	
-	worker.target = target;
-	worker.selector = selector;
+	worker.fileCompletionTask = ^ (NSString *temporaryFileName) {
+		[target performSelector:selector withObject:temporaryFileName];
+	};
 	
 	[manager enqueueWorker:worker atTopOfQueue:atTopOfQueue];
 }
